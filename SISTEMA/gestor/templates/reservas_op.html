@@ -3,12 +3,12 @@
 {% load static %}
 
 {% block content %}
-<div id=titulo>
-	<h2>NUEVA RESERVA</h2>
-  </div>
+
 <div id=fondo>
 <div id=form>
-	
+	<div id=titulo>
+		<h5>NUEVA RESERVA</h5>
+	  </div>	
 <form method="post" id="ReservaOperForm" data-chacras-url="{% url 'ajax_cargar_chacras' %}" novalidate>
 	{% csrf_token %}
 	{{ form.as_p }}

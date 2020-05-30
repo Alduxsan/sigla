@@ -1,0 +1,13 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% block content %}
+<br>
+	<form method="post">
+		{% csrf_token %}
+		<table class="table table-bordered">
+			{{ user_form.as_table }}	
+		</table>
+		<br>
+		<button type="submit">Registrar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "base_generic.html" %}
+
+
+{% load static %}
+
+{% block content %}
+  
+  <div id=fondo>
+    <div id=form>
+<form method="post" id='forms'>
+  <input type="hidden" name="action" value="add_form" />
+	{% csrf_token %}
+	{{ form.as_p }}
+
+
+  
+  <input type="button" 
+  name="btn" value="Reservar" id="submitBtn" data-toggle="modal" 
+  data-target="#confirm-submit" class="btn btn-success" onclick="pruebaFunciones()"/>
+  
+  
+</form>
+</div>
+</div>  
+
+<div class="modal fade" id="confirm-submit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              CONFIRMACIÓN DE RESERVA
+          </div>
+          <div class="modal-body">
+              ¿Confirma los datos de la Reserva?
+
+              <!-- We display the details entered by the user here -->
+              <table class="table">
+                  
+                <tr>
+                    <th>Productor</th>
+                    <td id="Productor"></td>
+                  </tr>
+                  <tr>
+                      <th>Chacra</th>
+                      <td id="Chacra"></td>
+                  </tr>
+                  <tr>
+                    <th>Producto</th>
+                    <td id="Producto"></td>
+                  </tr>
+                  <tr>
+                    <th>Fecha de recogida</th>
+                    <td id="Fecha"></td>
+                  </tr>
+                  <tr>
+                    <th>Hora de recogida</th>
+                    <td id="Hora"></td>
+                  </tr>
+                  <tr>
+                    <th>Observaciones</th>
+                    <td id="Observaciones"></td>
+                  </tr>
+                  
+              </table>
+
+          </div>
+
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+              <button type="submit" class="btn btn-default" id="submit" class="btn btn-success success">Confirmar</button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="{% static 'js/funciones.js' %}"></script>
+
+{% endblock %}
+
+
+
+<!-- 
+  
+  
+  Agradecimientos especiales a:
+
+  David Giordana
+  Pablo Tesarollo
+  RedMat de Code Time
+
+-->

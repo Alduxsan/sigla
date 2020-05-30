@@ -1,0 +1,17 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% block content %}
+
+	<div id=fondo>
+		<h3 id=alta_titulos>ALTA DE PLANTAS</h3>
+	<div id=form>	
+
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+
+	<button type="submit">Guardar</button>
+</form>
+</div>
+</div>  
+{% endblock %}

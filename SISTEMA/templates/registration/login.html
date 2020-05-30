@@ -1,0 +1,52 @@
+{% extends "base_generic.html" %}
+{% block sidebar %}
+{% endblock%}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+{% block content %}
+
+<div id='login_imagenlogo'>
+
+  <a href="{% url 'login' %}">
+    <img src="{% static 'images/SIGLA.png' %}">
+  </a>
+</div>
+
+{% if form.errors %}
+<p id='login_p'>Tu nombre de usuario y contraseña no coinciden, inténtalo de nuevo.</p>
+{% endif %}
+
+{% if next %}
+    {% if user.is_authenticated %}
+    <p id='login_p'>Tu usuario no tiene acceso a esta página,
+    ingresa con una cuenta que tenga acceso.</p>
+      {% else %}
+    
+      <p id='login_p'>Debes ingresar para solicitar tu flete.</p>
+  
+    {% endif %}
+{% endif %}
+
+<form method="post" action="{% url 'login' %}">
+{% csrf_token %}
+
+<div id='login_formularios'>
+ 
+  <td><label for="form.username.label_tag">USUARIO</label></td>
+  <td>{{ form.username }}</td>
+</div>
+<div id='login_formularios'>
+  <td><label for="form.username.label_tag">CONTRASEÑA</label></td>
+  <td>{{ form.password }}</td>
+</div>
+
+<div id='login_boton_login'>
+  <input type="submit" value="INGRESAR" />
+  <input type="hidden" name="next" value="{% url 'inicio'%}" />
+</div>
+</form>
+
+{# Assumes you setup the password_reset view in your URLconf #}
+<p id='login_p'><a href="{% url 'password_reset' %}">Olvidaste la contraseña?</a></p>
+
+{% endblock %}

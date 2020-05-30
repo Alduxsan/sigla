@@ -1,0 +1,42 @@
+ 
+Requerimientos para utilizar Twilio con un numero de telefono real en SIGLA
+
+
+Antes de comenzar: 
+
+- Deben instalarse las dependencias de Twilio en python segun su sistema operativo. Seguir los pasos mostrados aqui:
+https://www.twilio.com/docs/libraries/python
+
+- En las siguientes instrucciones veran que se solicita reemplazar los valores de auth_token y account_sid, asi como el 
+numero brindado por Twilio. El metodo indicado aqui fomenta la practicidad para el testeo y prueba de la aplicacion y 
+no generar complicaciones dependientes de los sistemas de cada tester. Pero, idealmente, los datos mencionados se 
+cargarian como variables de entorno, siendo almacenadas de forma segura debido a que son informacion sensible. 
+
+
+1 - Registrarse y autenticarse en Twilio a traves del email que proporcione en el registro. 
+
+2 - Logearse en Twilio y en la pantalla inicial https://www.twilio.com/console seguir las instrucciones para 
+obtener un numero proporcionado por la plataforma (Que sera el numero que enviara los mensajes)
+
+3 - En la misma pantalla principal buscar y copiar los datos de:ACCOUNT SID y AUTH TOKEN
+
+4 - Para poder enviar mensajes con twilio sin utilizar la version paga debe autentificar el numero de telefono al 
+que va a enviar el mensaje. Para ello en la pantalla principal (Dashboard) a la derecha clickee en verified numbers.
+Lo llevara a https://www.twilio.com/console/phone-numbers/verified
+
+5 - En esta pantalla (Verified Caller IDs ) tendra que ver su numero de telefono, caso contrario registrarlo, esperar el 
+mensaje de texto de verificacion y introducirlo en el formulario del sitio
+
+6 - Para utilizar el numero que ud obtuvo debe ir al archivo models.py, donde encima de la class Reserva (aproximadamente
+la linea 200) vera la funcion notificacion_sms, alli debera reemplazar el valor de account_sid y auth_token por los que obtuvo 
+de la pantalla Dashboard en el sitio de Twilio (entre comillas cada valor)
+Tambien el valor de la variable from_ unas pocas lineas mas abajo, debera cambiarla por el numero que Twilio le ha dado, entre comillas.
+
+
+7 - Ingresando a SIGLA con un usuario Operador, registre un usuario y un productor asociado a ese usuario. Al productor pongale su propio numero de 
+telefono celular, al que recibira el mensaje y que deberia ser el que autentifico en Twilio. Realice una reserva desde 
+la opcion Solicitar Flete en la pantalla de inicio para Productor y salga de la sesion mediante el boton superior 'SALIR'. 
+
+8 - Ingrese nuevamente con el usuario operador, dirijase al boton Listar Reservas y busque la reserva correspondiente a la 
+que ud realizo recientemente. Ingrese en EDITAR, modifique el campo de matricula del Camion y cambie el estado de la reserva
+a Asignado en el campo Estado debajo de todo. Guarde los cambios. 

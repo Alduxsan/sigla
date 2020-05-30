@@ -1,0 +1,19 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+  
+<div id='inicioprod_imagenlogo'>
+
+  <div class='inicio'>
+    <div>
+    <a href="{% url 'reserva' %}" ><button class="btn btn-primary btn-lg">SOLICITAR FLETE</button></a>
+  </div>
+  <div>
+    <a href="{% url 'reserva_listar' %}"><button class="btn btn-primary btn-lg">ESTADO DE RESERVAS</button></a>
+  </div>
+  </div>
+  
+
+{% endblock %}
+

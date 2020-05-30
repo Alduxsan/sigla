@@ -1,0 +1,34 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+  
+  <div id = datos_usuario>	
+	{% if object_list %}
+	{% for Productor in object_list %}
+
+	<h4 id=datos_usuario>Identificacion en el sistema </h4>
+    <p id=datos_usuario> <strong>Usuario:</strong> {{Productor.user}}</p>
+
+
+	<h4 id=datos_usuario>Datos Personales </h4>
+    <p id=datos_usuario> 
+	<strong>Nombre:</strong> {{Productor.nombre}} {{Productor.apellido}} <br>
+	<strong>Direccion:</strong> {{Productor.direccion}} <br>
+	<strong>Contacto:</strong> {{Productor.celular}}
+	</p>
+
+	<h4 id=datos_usuario>Datos comerciales </h4>
+    <p id=datos_usuario> 
+	<strong>RUT:</strong> {{Productor.rut}} <br>
+	<strong>Razon social:</strong> {{Productor.razonsocial}}
+	</p>
+
+		{% endfor %}
+		
+		{% else %}
+		<h1 id=datos_usuario>No hay registros de solicitudes</h1>
+		{% endif %}
+	
+</div
+{% endblock%}

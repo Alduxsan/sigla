@@ -1,0 +1,53 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block content %}
+
+<div id=titulo>
+<h2>LISTADO DE USUARIOS <a class="btn btn-primary" href="{% url 'usuario_crear' %}">Nuevo Usuario</a></h2>
+
+</div>
+
+<table class="table table-striped" id=tablas>
+
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Usuario</th>
+			<th>Email</th>
+			<th>Acciones</th>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for User in object_list %}
+		<tr>
+			<td>{{ User.id }}</td>
+			<td>{{ User.first_name }} {{ User.last_name }}</td>
+			<td>{{ User.email }}</td>
+						
+			<td>
+				<a class="btn btn-primary" href="{% url 'usuario_editar' User.id %}">Editar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de usuarios</h1>
+		{% endif %}
+	</tbody>
+</table> 
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Próxima</a> 
+    	{% endif %}
+    </li>
+</ul>
+{% endblock%}

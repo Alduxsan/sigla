@@ -1,0 +1,68 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+
+{% block content %}
+
+  <div id=titulo>
+  <h2>LISTADO DE RESERVAS PENDIENTES <a class="btn btn-primary" href="{% url 'reserva_op' %}">Nueva Reserva</a></h2>
+</div>
+
+
+<table class="table table-striped" id=tablas>
+	<thead>
+		<tr>
+	
+			<th>Nro</th>
+			<th>Productor</th>
+			<th>Chacra</th>
+			<th>Producto</th>
+			<th>Camión</th>
+			<th>Fecha de recogida</th>
+			<th>Hora de recogida</th>
+			<th>Fecha y hora de creación</th>
+			<th>Estado</th>
+			<th>Acciones</th>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for Reserva in object_list %}
+		<tr>
+			<td>{{ Reserva.id }}</td>
+			<td>{{ Reserva.productor }}</td>
+			<td>{{ Reserva.chacra }}</td>
+			<td>{{ Reserva.producto}}</td>
+			<td>{{ Reserva.idcamion |default_if_none:'Sin asignar'}}</td>
+			<td>{{ Reserva.fecha }}</td>
+			<td>{{ Reserva.hora }}</td>
+			<td>{{ Reserva.estado }}</td>
+			<td>{{ Reserva.fecha_hora_creacion }}</td>
+			
+			
+			<td>
+				<a class="btn btn-primary" href="{% url 'reserva_editar' Reserva.id %}">Editar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h2>No hay registros de solicitudes</h2>
+		{% endif %}
+	</tbody>
+</table> 
+
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Próxima</a> 
+    	{% endif %}
+    </li>
+</ul>
+{% endblock%}

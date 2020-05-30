@@ -1,0 +1,55 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+<table class="table table-striped" id=tablas>
+	<thead>
+		<tr>
+			<th>Nro</th>
+			<th>Chacra</th>
+			<th>Producto</th>
+			<th>Fecha de recogida</th>
+			<th>Hora de recogida</th>
+			<th>Estado</th>
+			<th>Matricula</th>
+		</tr>		 
+	</thead>
+
+	<tbody>
+		{% if object_list %}
+		{% for Reserva in object_list %}
+		<tr>
+			<td>{{Reserva.id}}</td>
+			<td>{{ Reserva.chacra }}</td>
+			<td>{{ Reserva.producto}}</td>
+			<td>{{ Reserva.fecha}}</td>
+			<td>{{ Reserva.hora}} </td>
+			<td>{{ Reserva.estado }}</td>
+			<td>{{ Reserva.idcamion |default_if_none:'Sin asignar'}}</td>
+		</tr>
+	
+		{% endfor %}
+		
+		{% else %}
+		<h2>No hay registros de solicitudes</h2>
+		{% endif %}
+	</tbody>
+</table> 
+</div>
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Siguiente</a> 
+    	{% endif %}
+    </li>
+</ul>
+
+{% endblock%}

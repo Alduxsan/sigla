@@ -1,0 +1,61 @@
+Alta Productos 
+☐ Deja ingresar nombres con minusculas (capaz se puede dejar igual que el alta de las plantas).
+☐ Deja ingresar numeros en el nombre (es correcto? puede serlo, no lo tengo del todo claro)
+
+Alta Productores 
+☐ Deja ingresar el mismo RUT que un Transportista, si controla que dos Productores no puedan tener el mismo RUT.
+
+Alta Chacra
+☐ Controla nombres de Chacras para distintos Productores. Eso se podria llegar a dar.
+
+Alta de Reservas con Operador
+☐ Hay que cambiar de Productor para que muestre las Chacras de todos.
+☐ No tiene titulo la pagina.
+
+Alta de Reservas con Productor
+☐ Deja ingresar reserva para dentro de dos minutos y para la hora actual.
+☐ En el titulo no pondria Matricula, pondria Camion.
+
+Trabajar con Reservas con Operador
+☐ Permite asignar un Camion a dos Chacras el mismo dia y a la misma hora.
+☐ En una Reserva en estado Pendiente, si se rechaza no pide motivo de rechazo.
+☐ Dejar Rechazar una Reserva con motivo No.
+
+Pagina Principal
+☐ Pagina Principal, Achicar iconos de arriba y logo.
+
+Estados para Reservas
+☐ En el panel de Operadores, en las Reservas Pendientes habria que ver que Estados dejar. Estado Pendiente es el actual
+☐ Asignado se hace al ingresar la matricula y no se deberia usar 
+☐ De Pendiente a Entregado no se deberia pasar, y dejar solo Rechazado puedo dejar lugar a confusion
+☐ Sacaria el motivo de rechazo de todas las Reservas en estado Asignado
+
+Modal de confirmacion
+☐ Ajustarlo para que se vea bien en el celular
+
+
+A FUTURO:
+        ☐ SIGLA 2.0
+        ☐ geolocalizacion de transportes
+        ☐ reportes, resumenes, etc visuales
+        ☐ log para registrar acciones de usuarios
+        ☐ Chatbot para solicitar pedidos por whatsapp
+        ☐ App android
+        ☐ Envío por Whatsapp en lugar de sms con las coordenadas de Geo localización de chacra al camionero
+        ☐ Funcionalidades para permitir la liquidacion de fletes
+     
+        
+        -- DOCUMENTACION (Hay que investigar metodos y estilos)  asignado  Diego , Ramón , @Alduxsan 
+        
+        -- PAGINA DE AYUDA mas elaborada, con texto, imagenes y un buen diseño para un usuario. Con links a videos por separado para cada tema si no se pueden colocar como embebidos asignado a Diego 
+        
+        -- Mensaje con informacion de causal de rechazo - SIN ASIGNAR
+        
+        -- Tema reportes y paneles de información - SIN ASIGNAR
+        
+        -- Geolocalización y info de fletes para facturación -- SIN ASIGNAR
+        
+        ESCRIBIRLE AL EVALUADOR PIDIENDO CONSEJO:
+        Vender el software a una empresa de desarrollo? consultar con el evaluador, armar un mail y solicitarle consejos. en principio ir por la opción del saas ver costos de empresa, como valuar el sistema en el mercado, opcion antel? tema de seguridad?
+        
+        que tan seguro es el sistema contra el robo de informacion? Si lo ofrecemos como servicio eso es importante. Hay que informarse sobre este tema, evaluador y gente del rubro

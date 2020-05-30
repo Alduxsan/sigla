@@ -1,0 +1,32 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+  
+  <div id = datos_usuario>	
+	{% if object_list %}
+	{% for Productor in object_list %}
+
+	<h4>Identificacion en el sistema </h4>
+    <p> <strong>Usuario:</strong> {{user.username}}</p>
+
+	<h4>Datos Personales </h4>
+    <p> 
+	<strong>Nombre:</strong> {{user.first_name}} {{user.last_name}} <br>
+	<strong>Contacto:</strong> {{Productor.email}}
+	</p>
+
+	<h4>Datos de sesión </h4>
+    <p> 
+	<strong>Última conexión:</strong> {{user.last_login}} <br>
+	<strong>Fecha de alta de usuario:</strong> {{user.date_joined}}
+	</p>
+
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de solicitudes</h1>
+		{% endif %}
+	
+</div
+{% endblock%}

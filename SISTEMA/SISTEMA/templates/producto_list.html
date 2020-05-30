@@ -1,0 +1,62 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+
+{% block content %}
+<div id='inicio_imagenlogo'>
+
+    <img src="{% static 'images/siglalargo.png' %}"/>
+
+<h2>LISTADO DE PRODUCTOS</h2>
+
+<div class=container style="text-align: right">
+  <td>
+	  <a class="btn btn-primary" href="{% url 'producto_crear' %}">Nuevo Producto</a>
+	  
+  </td>
+
+</div>
+
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>ID</td>
+			<td>Nombre</td>
+			<td>Zafra</td>
+			<td>Acciones</td>
+
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for Producto in object_list %}
+		<tr>
+			<td>{{ Producto.id }}</td>
+			<td>{{ Producto.nombre }} </td>
+			<td>{{ Producto.zafra }}</td>
+			<td>
+				<a class="btn btn-primary" href="{% url 'producto_editar' Producto.id %}">Editar</a>
+			</td>
+			
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de productos</h1>
+		{% endif %}
+	</tbody>
+</table> 
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Próxima</a> 
+    	{% endif %}
+    </li>
+</ul>
+{% endblock%}

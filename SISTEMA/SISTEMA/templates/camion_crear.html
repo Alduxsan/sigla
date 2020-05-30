@@ -1,0 +1,15 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% block content %}
+
+<div id='inicio_imagenlogo'>
+
+	<img src="{% static 'images/siglalargo.png' %}"/>
+<h2>ALTA DE CAMIONES</h2>
+<form method="post">
+	{% csrf_token %}
+	{{ form.as_p }}
+
+	<button type="submit">Grabar</button>
+</form>
+{% endblock %}

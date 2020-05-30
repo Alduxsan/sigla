@@ -1,0 +1,55 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% block content %}
+
+<div id=titulo>
+	<h2>LISTADO DE CHACRAS <a class="btn btn-primary" href="{% url 'chacra_crear' %}">Nueva Chacra</a></h2>
+</div>
+
+<table class="table table-striped" id=tablas>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Productora	</th>
+			<th>Nombre</th>
+			<th>Ubicación</th>
+			<th>Estado</th>
+			<th>Acciones</th>
+			
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for Chacra in object_list %}
+		<tr>
+			<td>{{ Chacra.id }}</td>
+			<td>{{ Chacra.productor.nombre }} {{ Chacra.productor.apellido }}</td>
+            <td>{{ Chacra.nombre }}</td>
+            <td>{{ Chacra.ubicacion }}</td>
+			<td>{{ Chacra.estado}}</td>	
+			<td>
+				<a class="btn btn-primary" href="{% url 'chacra_editar' Chacra.id %}">Editar</a>
+				
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de chacras</h1>
+		{% endif %}
+	</tbody>
+</table> 
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Próxima</a> 
+    	{% endif %}
+    </li>
+</ul>
+{% endblock%}

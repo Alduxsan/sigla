@@ -1,0 +1,360 @@
+/*barra superior */
+
+
+#menu{
+   
+    
+    width: auto;
+}
+
+
+#container-fluid{
+    display: block;
+    text-align: center;
+    position: relative;         
+}
+
+#container-fluid .bg{
+
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    opacity: .4;
+    width: auto;
+    height: auto;
+}
+
+
+.icon-bar {
+	width: auto;
+	
+    overflow: auto;
+    margin: auto;
+    text-align: center;
+    height: auto;
+    
+  }
+  
+  
+  .icon-bar a {
+	float: center;
+	width: 20%;
+    text-align: center;
+    margin: 1%;
+	margin-top: 20px;
+	transition: all 0.8s ease;
+	color: #323653;
+    font-size: 90px;
+  }
+
+  
+  .icon-bar a:hover {
+
+    margin: 3%;
+    text-decoration: none;
+    color: #d1ad1b;
+    }
+    
+
+
+  
+
+
+#login_imagenlogo{
+    text-align: center;}
+
+#login_boton_login{
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+}
+
+#login_formularios{
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+}
+#etiquetas{
+
+    width:100px;
+}
+#login_aviso_error{
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+}
+#login_p{
+    text-align: center;
+}
+
+
+
+/* INCIO PRODUCTOR */
+
+#inicioprod_imagenlogo{
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    
+}
+.logo_inicio img{
+    width: 100%;
+}
+.inicio{
+    display: block;
+    width: 300px;
+    margin: auto;
+    background-color: #d4d4d4;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+
+.inicio a{
+   
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 200;
+    margin-bottom: 3px;
+    font-weight: bold;
+    
+    
+}
+.inicio button{
+    text-align: center;
+    width: 250px;
+}
+.inicio button:hover{
+    text-align: center;
+    background-color: #3e8e41;
+    border-color: white;
+    width: 240px;
+}
+
+
+
+ 
+/* panel operador */
+#inicio_imagenlogo{
+
+  
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#inicio_imagenlogo div{
+    margin: 2px;
+    display: inline-block;
+    background: white;
+    border-radius: 4px;
+}
+
+#nombre{
+    width: 110px;
+    height: 110px;
+}
+
+.logo{
+    padding: 5px;
+    
+}
+
+#botones{
+    text-align: center;
+    display: block;
+}
+#boton_inicio{
+    margin:10px 10px 10px 10px;
+    width: 200px;
+}
+
+#Usuario{
+    width: 500px;
+    
+}
+#datos_usuario{
+    text-align: left;
+}
+
+#logout{
+    display: block;
+    text-align: center;
+}
+
+#login_formularios label{
+
+    width: 130px;
+}
+
+/* DATOS USUARIOS */
+
+#datos_usuario{
+    display: block;
+    margin: auto;
+    width: 500px;
+    background-image: url('/static/images/fondo_usuario2.png');
+    background-repeat:no-repeat;
+    background-position: right;
+    background-size: 30%;
+}
+
+#imagen_fondo{
+
+    text-align: right;
+}
+
+
+
+/*PANEL DE GESTION DE OPERADOR */
+
+
+h4{
+    font-weight: bold;
+}
+
+.main{
+    text-align: center;
+    max-width: 500px;
+    max-height: 500px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    background-color: #d4d4d4;
+    border-radius: 4px;
+}
+
+/* AQUI COMIENZA CSS PARA FORMS */
+
+
+#fondo{
+    text-align: center;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+#form{
+
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding-top: 10px;
+
+}
+
+
+/* ALTAS */
+h4{
+
+    font-weight: bold;
+}
+
+/* LISTADOS */
+#titulo{
+
+    text-align: center;
+}
+#nueva{
+    text-align: right;
+}
+
+h2{
+
+    text-align: center;
+    
+}
+
+
+/*TABLAS*/
+
+#tablas{
+
+    margin: auto;
+    width: auto;
+}
+
+
+thead th{
+    font-weight: bolder;
+    font-size: 1.2em;
+    background-color: #f0f0f0;
+
+}
+tbody tr{
+    background-color: white;
+}
+
+
+
+ /*BOTONES */
+ .dropbtn {
+    background-color: rgb(88, 99, 255);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 180px;
+    margin-top: 5px;
+    border-radius: 4px;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 10px 10px 5px grey;
+    z-index: 1;
+
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+
+    
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;
+    animation-duration: 1s; }
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    
+    display: block;}
+  
+  
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+      
+    background-color: #3e8e41;
+    font-weight: bold;
+
+} 
+
+
+
+

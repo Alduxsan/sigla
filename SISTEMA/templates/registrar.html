@@ -1,0 +1,18 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div id=fondo>
+		<h3 id=alta_titulos>NUEVO USUARIO</h3>
+	<div id=form>
+	<form method="post">
+		{% csrf_token %}
+		<table class="table table-bordered">
+			{{ user_form.as_table }}	
+		</table>
+		<br>
+		<button type="submit">Guardar</button>
+</form>
+</div>
+</div>  
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+
+<div id='logout'>
+<p>TE HAS DESCONECTADO DE SIGLA</p>  
+
+<a href="{% url 'login' %}">
+    <img src="{% static 'images/SIGLA.png' %}">
+  </a>
+</div>
+{% endblock %}

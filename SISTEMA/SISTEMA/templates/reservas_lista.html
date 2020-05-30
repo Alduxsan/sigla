@@ -1,0 +1,44 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block content %}
+  
+  <div id='inicio_imagenlogo'>
+
+    <img src="{% static 'images/siglalargo.png' %}"/>
+  
+  </div>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<td>Chacra</td>
+			<td>Producto</td>
+			<td>Fecha y Hora</td>
+			<td>Estado</td>
+			
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for Reserva in object_list %}
+		<tr>
+			<td>{{ Reserva.chacra }}</td>
+			<td>{{ Reserva.producto}}</td>
+			<td>{{ Reserva.fecha_hora }}</td>
+			<td>{{ Reserva.estado }}</td>
+			
+			<!-- <td>
+				<a class="btn btn-primary" href="#">Editar</a>
+				<a class="btn btn-danger" href="#">Eliminar</a>
+			</td> -->
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de solicitudes</h1>
+		{% endif %}
+	</tbody>
+</table> 
+
+{% endblock%}

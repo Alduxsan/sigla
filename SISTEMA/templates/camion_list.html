@@ -1,0 +1,60 @@
+{% extends 'base_generic.html' %}
+{% load static %}
+{% block content %}
+
+<div id=titulo>
+<h2>LISTADO DE CAMIONES <a class="btn btn-primary" href="{% url 'camion_crear' %}">Nuevo Camión</a></h2>
+</div>
+
+<table class="table table-striped" id=tablas>
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Transportista</th>
+			<th>Matricula</th>
+			<th>Marca</th>
+			<th>Modelo</th>
+			<th>Viajes</th>
+			<th>Contacto de Transportista</th>
+			<th>Estado</th>
+			<th>Acciones</th>
+		</tr>
+		
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for Camion in object_list %}
+		<tr>
+			<td>{{ Camion.id }}</td>
+			<td>{{ Camion.idtransportista }} </td>
+			<td>{{ Camion.matricula }}</td>
+			<td>{{ Camion.marca }}</td>
+			<td>{{ Camion.modelo }}</td>
+			<td>{{ Camion.viajes}}</td>
+			<td>{{ Camion.idtransportista.celular}}</td>
+			<td>{{ Camion.estado }}</td>
+			
+			<td>
+				<a class="btn btn-primary" href="{% url 'camion_editar' Camion.id %}">Editar</a>
+			</td>
+		</tr>
+		{% endfor %}
+		
+		{% else %}
+		<h1>No hay registros de camiones</h1>
+		{% endif %}
+	</tbody>
+</table> 
+<ul class="pager">
+	<li>
+		{% if page_obj.has_previous %}
+       	 <a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+		{% endif %}
+        </li>
+	<li>
+		{% if page_obj.has_next %}
+     	 <a href="?page={{ page_obj.next_page_number }}">Próxima</a> 
+    	{% endif %}
+    </li>
+</ul>
+{% endblock%}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!-- Add additional CSS in static file -->
+{% load static %}
+<html lang="en">
+<head>
+  
+  {% block title %}<title>Sigla</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <!-- Add icon library -->
+   <script src="https://kit.fontawesome.com/52d20ec9a8.js" crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+  
+<div id ="container-fluid">
+      {% block sidebar %}
+      <div class="bg">
+        <img src='https://mocah.org/uploads/posts/533818-wheat-field.jpg'>
+      </div>
+      <div id=menu>
+      <div class="icon-bar">
+        {% if request.user.groups.all.0.name == 'Productores' %}
+        <a class="active" href="{% url 'inicio' %}"><i class="fas fa-home"></i></a>
+        <a href='https://drive.google.com/drive/folders/1EdPf4HU5MXEoTsTF5mOo_5kxyelTbPvv?usp=sharing'><i class="far fa-question-circle"></i></a>
+        
+        <a href="{% url 'datos_usuario'%}"title= "Usuario: {{ user.get_username }}">
+          <i class="fas fa-envelope"></i></a>
+         
+        <a href="{% url 'logout'%}"><i class="fas fa-sign-out-alt"></i></a>
+        
+      </div>
+   
+  
+          {%else%} 
+          <div class="icon-bar">
+            <a class="active" href="{% url 'inicio' %}" ><i id=home_icon class="fas fa-home"></i></a>
+            
+            <a href='https://drive.google.com/drive/folders/1EdPf4HU5MXEoTsTF5mOo_5kxyelTbPvv?usp=sharing'>
+              <i id=ayuda_icon class="fas fa-question-circle"></i></a>
+            
+            <a href="{% url 'datos_usuario_operador'%}" title="Operador: {{ user.get_username }}">
+              <i id=usuario_icon class="far fa-address-card" ></i></a>
+            
+            <a href="{% url 'logout'%}">
+              <i id=salir_icon class="fas fa-sign-out-alt"></i></a>
+              
+          </div> 
+   {% endif %} 
+  </div>
+</div>
+<div id='inicio_imagenlogo'>
+ 
+  <div class='logo'>
+    <img src="{% static 'images/trigo.png' %}" />
+  </div>
+
+  <div class='logo'>
+    <img src="{% static 'images/browser.png' %}" />
+  </div>
+
+  <div class='logo'>
+    <img src="{% static 'images/nombre2.png' %}" />
+  </div>
+  
+  <div class='logo'>
+    <img src="{% static 'images/truck.png' %}" />
+  </div>
+
+</div>
+
+     {% endblock %}
+ 
+      {% block content %}
+      
+      
+      {% endblock %}
+      
+
+</body>
+</html>

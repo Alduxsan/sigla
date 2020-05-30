@@ -119,7 +119,7 @@ class Chacra(models.Model):
         (ACTIVO, ('Activo')),
         (INACTIVO, ('Inactivo'))
         ]
-    nombre = models.CharField(db_column='Nombre', max_length=50, blank=False, null=False,unique=True,validators=[RegexValidator('^[A-Z]+(?: [A-Z0-9]+)*$','Ingrese nombre de chacra en mayúsculas')])  
+    nombre = models.CharField(db_column='Nombre', max_length=50, blank=False, null=False, validators=[RegexValidator('^[A-Z]+(?: [A-Z0-9]+)*$','Ingrese nombre de chacra en mayúsculas')])  
     productor = models.ForeignKey(Productor, on_delete = models.CASCADE)
     ubicacion = models.TextField(db_column='Ubicacion', max_length=100, blank=False, null=False,validators=[RegexValidator('^[A-Z]+(?: [A-Z0-9]+)*$','Ingrese ubicación en mayúsculas')]) 
     observacion = models.CharField(db_column='Observacion', max_length=100, blank=True, null=True)  

@@ -7,6 +7,9 @@
 
   <div id=fondo>
     <div id=form>
+		<div id=titulo>
+			<h3>RESERVA</h3>
+		  </div>
 <form method="post" id="ReservaOperFormUpdate" data-chacras-url="{% url 'ajax_cargar_chacras' %}" novalidate>
 	{% csrf_token %}
 	{{ form.as_p }}

@@ -69,18 +69,10 @@ class Transportista(models.Model):
         
         return self.nombre
 
-#Control para no permitir RUT duplicado#
-    def clean_rut(self):
-        rut = self.cleaned_data.get('rut')
-        for instance in Transportista.objects.all():
-            if instance.rut == rut:
-                raise ValidationError('RUT asociado a otro transportista,verifique')
-        return rut
-
-#Creación camion# 
+#Creación camion
 class Camion(models.Model):
 
-#Estados para camion#    
+#Estados para camion 
     disponible = 'Disponible'
     ocupado = 'Ocupado'
     no_disponible = 'No disponible'
@@ -119,7 +111,7 @@ class Chacra(models.Model):
         (ACTIVO, ('Activo')),
         (INACTIVO, ('Inactivo'))
         ]
-    nombre = models.CharField(db_column='Nombre', max_length=50, blank=False, null=False,unique=True,validators=[RegexValidator('^[A-Z]+(?: [A-Z0-9]+)*$','Ingrese nombre de chacra en mayúsculas')])  
+    nombre = models.CharField(db_column='Nombre', max_length=50, blank=False, null=False, validators=[RegexValidator('^[A-Z]+(?: [A-Z0-9]+)*$','Ingrese nombre de chacra en mayúsculas')])  
     productor = models.ForeignKey(Productor, on_delete = models.CASCADE)
     ubicacion = models.TextField(db_column='Ubicacion', max_length=100, blank=False, null=False,validators=[RegexValidator('^[A-Z]+(?: [A-Z0-9]+)*$','Ingrese ubicación en mayúsculas')]) 
     observacion = models.CharField(db_column='Observacion', max_length=100, blank=True, null=True)  
@@ -259,7 +251,7 @@ class Reserva(models.Model):
             else:
                 raise ValidationError('Debe reservar para una fecha posterior a la actual')
         #no permite estado rechazado sin indicar motivo#
-        if self.estado == "Rechazado" and (self.motivo_rechazo == '0'):
+        if self.estado == "Rechazado" and (self.motivo_rechazo == 'NO'):
             raise ValidationError('Indique Motivo de Rechazo por favor')
 
 #Control de estado disponible para asignación de camion#

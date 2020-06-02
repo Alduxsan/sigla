@@ -93,6 +93,18 @@ class ProductorForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         self.fields['user'].queryset = User.objects.filter(groups__name='Productores')
 
+    def clean(self):
+        cleaned_data = super(ProductorForm, self).clean()
+        rut = cleaned_data.get("rut")
+        try:
+            transp_rut = Productor.objects.get(rut=rut)
+        except Productor.DoesNotExist:
+            pass
+        else:
+            raise forms.ValidationError(
+                "Ya existe este rut para una Transportista"
+            )    
+
 #Formulario creación chacra#
 class ChacraForm(forms.ModelForm):
 
@@ -156,6 +168,18 @@ class TransportistaForm(forms.ModelForm):
             'celular': forms.TextInput(attrs={'placeholder': 'Ingrese el numero sin el 0 inicial','class':'form-control'}),            'email': forms.EmailInput(attrs={'class':'form-control'}),
             'estado': forms.Select(attrs={'class':'form-control'}),
 		   }
+    def clean(self):
+        cleaned_data = super(TransportistaForm, self).clean()
+        rut = cleaned_data.get("rut")
+        try:
+            prod_rut = Productor.objects.get(rut=rut)
+        except Productor.DoesNotExist:
+            pass
+        else:
+            raise forms.ValidationError(
+                "Ya existe este rut para un Productor"
+            )
+
 
 #Formulario creación camion#    
 class CamionForm(forms.ModelForm):

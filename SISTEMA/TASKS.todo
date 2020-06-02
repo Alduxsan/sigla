@@ -1,42 +1,41 @@
-Alta Productos 
-☐ Deja ingresar nombres con minusculas (capaz se puede dejar igual que el alta de las plantas).
-☐ Deja ingresar numeros en el nombre (es correcto? puede serlo, no lo tengo del todo claro)
+Ticket 1:
+        Alta Productos 
+        ✔ 1.1 Deja ingresar nombres con minusculas (capaz se puede dejar igual que el alta de las plantas). @done(20-05-30 18:05)
+        ✔ 1.2 Deja ingresar numeros en el nombre (es correcto? puede serlo, no lo tengo del todo claro) @done(20-05-30 18:05)
 
-Alta Productores 
-☐ Deja ingresar el mismo RUT que un Transportista, si controla que dos Productores no puedan tener el mismo RUT.
+        Alta Productores 
+        ☐ 2.1 Deja ingresar el mismo RUT que un Transportista, si controla que dos Productores @Ramon
+        - no puedan tener el mismo RUT.
 
-Alta Chacra
-☐ Controla nombres de Chacras para distintos Productores. Eso se podria llegar a dar.
+        Alta Chacra
+        ✔ 3.1 Controla nombres de Chacras para distintos Productores. Eso se podria llegar a dar. @mine @started(20-05-30 18:42) @done(20-05-30 18:58) @lasted(16m3s)
 
-Alta de Reservas con Operador
-☐ Hay que cambiar de Productor para que muestre las Chacras de todos.
-✔ No tiene titulo la pagina. @done(20-05-29 23:23)
+        Alta de Reservas con Operador
+        ☐ 4.1 Hay que cambiar de Productor para que muestre las Chacras de todos. 
+        ✔ 4.2 No tiene titulo la pagina.@Aldo @done(20-05-30 18:40)
+        
+        Alta de Reservas con Productor
+        ☐ 5.1 Deja ingresar reserva para dentro de dos minutos y para la hora actual. 
+        ✔ 5.2 En el titulo no pondria Matricula, pondria Camion. @Aldo @done(20-05-30 20:59)
 
-Alta de Reservas con Productor
-☐ Deja ingresar reserva para dentro de dos minutos y para la hora actual.
-☐ En el titulo no pondria Matricula, pondria Camion.
+        Trabajar con Reservas con Operador
+        ☐ 6.1 Permite asignar un Camion a dos Chacras el mismo dia y a la misma hora. @Aldo
+        ☐ 6.2 En una Reserva en estado Pendiente, si se rechaza no pide motivo de rechazo. @Aldo
+        ☐ 6.3 Dejar Rechazar una Reserva con motivo No. @Aldo
 
-Trabajar con Reservas con Operador
-☐ Permite asignar un Camion a dos Chacras el mismo dia y a la misma hora.
-☐ En una Reserva en estado Pendiente, si se rechaza no pide motivo de rechazo.
-☐ Dejar Rechazar una Reserva con motivo No.
+        Pagina Principal
+        ☐ 7.1 Pagina Principal, Achicar iconos de arriba y logo.
 
-Pagina Principal
-☐ Pagina Principal, Achicar iconos de arriba y logo.
+        Estados para Reservas
+        ☐ 8.1 En el panel de Operadores, en las Reservas Pendientes habria que ver que Estados dejar. Estado Pendiente es el actual
+        ☐ 8.2 Asignado se hace al ingresar la matricula y no se deberia usar 
+        ☐ 8.3 De Pendiente a Entregado no se deberia pasar, y dejar solo Rechazado puedo dejar lugar a confusion
+        ☐ 8.4 Sacaria el motivo de rechazo de todas las Reservas en estado Asignado (en discusion)
 
-Estados para Reservas
-☐ En el panel de Operadores, en las Reservas Pendientes habria que ver que Estados dejar. Estado Pendiente es el actual
-☐ Asignado se hace al ingresar la matricula y no se deberia usar 
-☐ De Pendiente a Entregado no se deberia pasar, y dejar solo Rechazado puedo dejar lugar a confusion
-☐ Sacaria el motivo de rechazo de todas las Reservas en estado Asignado
+        Modal de confirmacion
+        ☐ 9.1 Ajustarlo para que se vea bien en el celular
 
-Modal de confirmacion
-☐ Ajustarlo para que se vea bien en el celular
-
-FONDO
-dropdow scroll (menues que se desplieguen en la direccion mas adecuada con boostrap)
-
-fondo demasiado amplio en la version desktop (intentar corregir con boostrap)
+        ☐ 9.2 corregir que al elegir una reserva pendiente el formulario no permite rechazarla
 
 A FUTURO:
         ☐ SIGLA 2.0
@@ -49,7 +48,7 @@ A FUTURO:
         ☐ Funcionalidades para permitir la liquidacion de fletes
      
         
-        -- DOCUMENTACION (Hay que investigar metodos y estilos)  asignado  Diego , Ramón , @Alduxsan 
+        -- DOCUMENTACION (Hay que investigar metodos y estilos)  asignado , Ramón
         
         -- PAGINA DE AYUDA mas elaborada, con texto, imagenes y un buen diseño para un usuario. Con links a videos por separado para cada tema si no se pueden colocar como embebidos asignado a Diego 
         

@@ -69,18 +69,10 @@ class Transportista(models.Model):
         
         return self.nombre
 
-#Control para no permitir RUT duplicado#
-    def clean_rut(self):
-        rut = self.cleaned_data.get('rut')
-        for instance in Transportista.objects.all():
-            if instance.rut == rut:
-                raise ValidationError('RUT asociado a otro transportista,verifique')
-        return rut
-
-#Creación camion# 
+#Creación camion
 class Camion(models.Model):
 
-#Estados para camion#    
+#Estados para camion 
     disponible = 'Disponible'
     ocupado = 'Ocupado'
     no_disponible = 'No disponible'
@@ -259,7 +251,7 @@ class Reserva(models.Model):
             else:
                 raise ValidationError('Debe reservar para una fecha posterior a la actual')
         #no permite estado rechazado sin indicar motivo#
-        if self.estado == "Rechazado" and (self.motivo_rechazo == '0'):
+        if self.estado == "Rechazado" and (self.motivo_rechazo == 'NO'):
             raise ValidationError('Indique Motivo de Rechazo por favor')
 
 #Control de estado disponible para asignación de camion#

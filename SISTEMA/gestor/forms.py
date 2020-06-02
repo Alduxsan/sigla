@@ -97,13 +97,8 @@ class ProductorForm(forms.ModelForm):
         cleaned_data = super(ProductorForm, self).clean()
         rut = cleaned_data.get("rut")
         try:
-<<<<<<< HEAD
             transp_rut = Transportista.objects.get(rut=rut)
         except Transportista.DoesNotExist:
-=======
-            transp_rut = Productor.objects.get(rut=rut)
-        except Productor.DoesNotExist:
->>>>>>> 027ba78af44ae438e5b242493639f5952758d9b5
             pass
         else:
             raise forms.ValidationError(

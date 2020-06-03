@@ -254,6 +254,10 @@ class Reserva(models.Model):
         if self.estado == "Rechazado" and (self.motivo_rechazo == 'NO'):
             raise ValidationError('Indique Motivo de Rechazo por favor')
 
+        else:
+            if self.motivo_rechazo != "NO" and (self.estado != 'Rechazado'):
+                raise ValidationError('Un Motivo de Rechazo solo puede asignarse a Reservas con Estado Rechazado, verifique')
+
 #Control de estado disponible para asignación de camion#
     def save(self, *args, **kwargs):
 

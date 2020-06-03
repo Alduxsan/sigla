@@ -4,8 +4,7 @@ Ticket 1:
         ✔ 1.2 Deja ingresar numeros en el nombre (es correcto? puede serlo, no lo tengo del todo claro) @done(20-05-30 18:05)
 
         Alta Productores 
-        ☐ 2.1 Deja ingresar el mismo RUT que un Transportista, si controla que dos Productores @Ramon
-        - no puedan tener el mismo RUT.
+        ✔ 2.1 Deja ingresar el mismo RUT que un Transportista, si controla que dos Productores no puedan tener el mismo RUT. @Ramon @done(20-06-02 15:40)
 
         Alta Chacra
         ✔ 3.1 Controla nombres de Chacras para distintos Productores. Eso se podria llegar a dar. @mine @started(20-05-30 18:42) @done(20-05-30 18:58) @lasted(16m3s)
@@ -21,21 +20,23 @@ Ticket 1:
         Trabajar con Reservas con Operador
         ☐ 6.1 Permite asignar un Camion a dos Chacras el mismo dia y a la misma hora. @Aldo
         ☐ 6.2 En una Reserva en estado Pendiente, si se rechaza no pide motivo de rechazo. @Aldo
-        ☐ 6.3 Dejar Rechazar una Reserva con motivo No. @Aldo
+        ✔ 6.3 Dejar Rechazar una Reserva con motivo No. @Aldo @done(20-06-02 20:56)
 
         Pagina Principal
         ☐ 7.1 Pagina Principal, Achicar iconos de arriba y logo.
+        Modal de confirmacion
+        ☐ 9.1 Ajustarlo para que se vea bien en el celular
 
         Estados para Reservas
         ☐ 8.1 En el panel de Operadores, en las Reservas Pendientes habria que ver que Estados dejar. Estado Pendiente es el actual
         ☐ 8.2 Asignado se hace al ingresar la matricula y no se deberia usar 
         ☐ 8.3 De Pendiente a Entregado no se deberia pasar, y dejar solo Rechazado puedo dejar lugar a confusion
         ☐ 8.4 Sacaria el motivo de rechazo de todas las Reservas en estado Asignado (en discusion)
-
-        Modal de confirmacion
-        ☐ 9.1 Ajustarlo para que se vea bien en el celular
-
         ☐ 9.2 corregir que al elegir una reserva pendiente el formulario no permite rechazarla
+
+        NUEVOS Bugs : 
+        - Alta Transportista no chequea nombre repetido, ni mayusculas
+        - Entre los usuarios disponibles me aparecenn los que ya tienen un productor asignado al hacer un nuevo productor
 
 A FUTURO:
         ☐ SIGLA 2.0

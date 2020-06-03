@@ -431,6 +431,77 @@ class ReservaOperForm(forms.ModelForm):
         elif self.instance.pk:
             self.fields['chacra'].queryset = self.instance.productor.chacra_set.order_by('nombre')
 
+
+
+
+
+class ReservaOperFormPendiente(forms.ModelForm):
+
+    class Meta:
+        model = Reserva
+        fields = [
+            'productor',
+            'chacra',
+            'producto',
+            'fecha',
+            'hora',
+            'observaciones',
+            'idcamion',
+            'idplanta',
+            'motivo_rechazo',
+            'estado',
+            'fecha_hora_creacion',
+        ]
+        labels = {
+			'productor': 'Productor',
+			'chacra':'Chacra',
+		    'producto': 'Producto',
+            'fecha': 'Fecha de recogida',
+            'hora': 'Hora de recogida',
+            'observaciones': 'Observaciones',
+            'idcamion': 'Camion',
+           
+            'idplanta': 'Planta descarga',
+            'motivo_rechazo': 'Observación por rechazo',
+            'estado': 'Estado',
+            'fecha_hora_creacion': 'Fecha y hora de creacion',
+		  }
+        widgets = {
+            'nombre': forms.Select(attrs={'class':'form-control'}),
+			'chacra': forms.Select(attrs={'class':'form-control'}),
+            'producto': forms.Select(attrs={'class':'form-control'}),
+            'fecha': MyDateInput(attrs={'class':'form-control', 'id':'fecha'}),
+            'hora' : MyTimeInput(attrs={'class':'form-control', 'id':'hora'}),
+            'observaciones': forms.TextInput(attrs={'class':'form-control'}),
+            'idcamion': forms.Select(attrs={'class':'form-control'}),
+            'idplanta': forms.Select(attrs={'class':'form-control'}),
+            'motivo_rechazo': forms.Select(attrs={'class':'form-control'}),
+            'estado': forms.Select(attrs={'class':'form-control'}),
+            'fecha_hora_creacion': forms.DateTimeInput(attrs={'class':'form-control'}),
+		   }
+
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['chacra'].disabled = True
+        self.fields['productor'].disabled = True
+        self.fields['producto'].disabled = True
+        self.fields['fecha'].disabled = True
+        self.fields['hora'].disabled = True
+        self.fields['observaciones'].disabled = True
+       
+        self.fields['fecha_hora_creacion'].disabled = True
+        
+
+        if 'productor' in self.data:
+            productor_id = int(self.data.get('productor'))
+            self.fields['chacra'].queryset = Chacra.objects.filter(productor_id=productor_id).order_by('nombre')
+
+        elif self.instance.pk:
+            self.fields['chacra'].queryset = self.instance.productor.chacra_set.order_by('nombre')
+
+
+
 #Formulario de actualizacion reserva de operador#        
 class ReservaOperFormUpdate(forms.ModelForm):
 
@@ -479,7 +550,7 @@ class ReservaOperFormUpdate(forms.ModelForm):
             'fecha_hora_creacion': forms.DateTimeInput(attrs={'class':'form-control'}),
 		   }
 
-#Datos habilitados o inhabilitados#
+#Datos inhabilitados#
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['chacra'].disabled = True

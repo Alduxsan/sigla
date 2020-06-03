@@ -63,4 +63,7 @@ urlpatterns += [
     path('reservas_op/rechazadas',login_required(views.ReservaOperRechList.as_view()), name='reserva_op_rechazadas'),
     path('datos_usuario/',login_required(DatosUsuarioList.as_view()), name='datos_usuario'),
     path('datos_usuario_operador/',login_required(DatosUsuarioOperadorList.as_view()), name='datos_usuario_operador'),
+   
+    url(r'^reservas_update/Pendiente/(?P<pk>\d+)/$', login_required(views.ReservaUpdatePendiente.as_view()), name='reservas_op_updatePendiente'),
+
 ] 

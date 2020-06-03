@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+
+{% load static %}
+
+{% block content %}
+  
+
+  <div id=fondo>
+    
+  <div id=form>
+	<div id=titulo>
+		<h3>RESERVA</h3>
+	  </div>
+<form method="post" id="ReservaOperFormPendiente" data-chacras-url="{% url 'ajax_cargar_chacras' %}" novalidate>
+	{% csrf_token %}
+	{{ form.as_p }}
+
+	<button type="submit">Guardar</button>
+</form>
+</div>
+</div>  
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="{% static 'js/funciones.js' %}"></script>
+ 
+{% endblock %}
+
+	

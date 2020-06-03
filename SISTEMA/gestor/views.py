@@ -11,7 +11,7 @@ from django.db.models import Q
 
 from .models import Productor, Chacra, Transportista, Camion, Planta, Producto, Reserva
 from .forms import ProductForm, UserForm, ProductorForm, ChacraForm, TransportistaForm, CamionForm, ReservaForm, PlantaForm, \
-    ReservaOperForm, ReservaOperFormUpdate,ProductUpdateForm, ReservaOperPreEstado
+    ReservaOperForm, ReservaOperFormUpdate,ProductUpdateForm, ReservaOperPreEstado, ReservaOperFormPendiente
 
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -542,6 +542,20 @@ class ReservaUpdate(UserPassesTestMixin,UpdateView):
     model = Reserva
     form_class = ReservaOperPreEstado
     template_name = 'reservas_op.html'
+    success_url = reverse_lazy('reserva_op_pendientes')
+
+    def test_func(self):
+        return self.request.user.groups.filter(name='Operadores').exists()
+  
+    def handle_no_permission(self):
+        return HttpResponse('Usuario sin permisos, favor contactar al administrador')
+
+
+#Actualizacion de datos de la reserva#
+class ReservaUpdatePendiente(UserPassesTestMixin,UpdateView):
+    model = Reserva
+    form_class = ReservaOperFormPendiente
+    template_name = 'reservas_op_updatePendiente.html'
     success_url = reverse_lazy('reserva_op_pendientes')
 
     def test_func(self):

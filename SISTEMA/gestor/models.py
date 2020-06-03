@@ -8,6 +8,7 @@ from django.utils import timezone
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 from sms_function import sms_productor,sms_transportista
+from estados import ESTADOS, MOTIVO_RECHAZO
 
 #Creación productor#
 class Productor(models.Model):
@@ -184,44 +185,13 @@ class Producto(models.Model):
 #Creación reserva#
 class Reserva(models.Model):
 
-#Estados de la reserva#    
-    PENDIENTE = 'Pendiente'
-    ASIGNADO = 'Asignado'
-    RECHAZADO = 'Rechazado'
-    ENTREGADO = 'Entregado'
-    SIN_MOTIVO = 'NO'
-    FIN_CHACRA = 'Fin de chacra'
-    ROT_CAMION = 'Rotura de camión'
-    ROT_MAQUIN = 'Rotura de maquina en chacra'
-    DESVIO_CAM = 'Desvío de camión'
-    CANCELA_PROD = 'Cancelada por productor'
-    LLUVIA = 'Lluvia'
-
-    ESTADOS = [
-        (PENDIENTE, ('Pendiente')),
-        (ASIGNADO, ('Asignado')),
-        (RECHAZADO,('Rechazado')),
-        (ENTREGADO,('Entregado'))
-        ]
-#Motivos para el rechazo de reservas#
-    MOTIVO_RECHAZO = [
-        (SIN_MOTIVO, ('NO')),
-        (FIN_CHACRA, ('Fin de chacra')),
-        (ROT_CAMION, ('Rotura de camión')),
-        (ROT_MAQUIN, ('Rotura de maquina en chacra')),
-        (DESVIO_CAM, ('Desvío de camión')),
-        (CANCELA_PROD, ('Cancelada por productor')),
-        (LLUVIA, ('Lluvia'))
-            ]
-
-
     productor = models.ForeignKey(Productor, on_delete=models.CASCADE, default = User )
     chacra = models.ForeignKey(Chacra, on_delete=models.CASCADE)
     producto = models.ForeignKey(Producto, blank=False, null=False, on_delete=models.PROTECT, default=None)
     fecha = models.DateField(default=date.today, blank=False, null=False)
     hora = models.TimeField(default=datetime.now,blank=False, null=False)
     observaciones = models.TextField(db_column='observaciones', max_length=80, blank=True)
-    motivo_rechazo = models.CharField(db_column='observacion por rechazo', choices= MOTIVO_RECHAZO, default = SIN_MOTIVO, max_length = 30)
+    motivo_rechazo = models.CharField(db_column='observacion por rechazo', choices= MOTIVO_RECHAZO, default = 'NO', max_length = 30)
     idcamion = models.ForeignKey(Camion, blank=True, null=True, on_delete=models.PROTECT)
     idplanta = models.ForeignKey(Planta, blank=True, null=True, on_delete=models.PROTECT)
     fecha_hora_creacion = models.DateTimeField(default=datetime.now,blank=True)

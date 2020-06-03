@@ -7,6 +7,7 @@ from django.core.exceptions import ValidationError
 from django.utils.safestring import mark_safe
 
 from django.db.models import Q
+from estados import ESTADOS, ESTADOS_PENDIENTE, MOTIVO_RECHAZO, ESTADOS_ASIGNADA
 
 #Formulario creación usuario#
 class UserForm (forms.ModelForm):
@@ -258,7 +259,7 @@ class ProductForm(forms.ModelForm):
             'estado': forms.Select(attrs={'class':'form-control'}),
 		   }
     
-#Control para no duplicación de zafra y año#
+    #Control para no duplicación de zafra y año#
     def clean(self):
         cleaned_data = super(ProductForm, self).clean()
         nombre = cleaned_data.get("nombre")
@@ -432,9 +433,6 @@ class ReservaOperForm(forms.ModelForm):
             self.fields['chacra'].queryset = self.instance.productor.chacra_set.order_by('nombre')
 
 
-
-
-
 class ReservaOperFormPendiente(forms.ModelForm):
 
     class Meta:
@@ -489,9 +487,9 @@ class ReservaOperFormPendiente(forms.ModelForm):
         self.fields['fecha'].disabled = True
         self.fields['hora'].disabled = True
         self.fields['observaciones'].disabled = True
-       
         self.fields['fecha_hora_creacion'].disabled = True
         
+        self.fields['estado'].choices = ESTADOS_PENDIENTE
 
         if 'productor' in self.data:
             productor_id = int(self.data.get('productor'))
@@ -550,7 +548,7 @@ class ReservaOperFormUpdate(forms.ModelForm):
             'fecha_hora_creacion': forms.DateTimeInput(attrs={'class':'form-control'}),
 		   }
 
-#Datos inhabilitados#
+    #Datos inhabilitados#
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['chacra'].disabled = True
@@ -563,12 +561,15 @@ class ReservaOperFormUpdate(forms.ModelForm):
         self.fields['idplanta'].disabled = True
         self.fields['fecha_hora_creacion'].disabled = True
         
+        self.fields['estado'].choices = ESTADOS_ASIGNADA
+
+
         if 'productor' in self.data:
             try:
                 productor_id = int(self.data.get('productor'))
                 self.fields['chacra'].queryset = Chacra.objects.filter(productor_id=productor_id).order_by('nombre')
             except (ValueError, TypeError):
-                pass  # invalid input from the client; ignore and fallback to empty City queryset
+                pass  
         elif self.instance.pk:
             self.fields['chacra'].queryset = self.instance.productor.chacra_set.order_by('nombre')
 

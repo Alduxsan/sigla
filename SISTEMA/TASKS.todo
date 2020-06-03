@@ -19,8 +19,8 @@ Ticket 1:
 
         Trabajar con Reservas con Operador
         ☐ 6.1 Permite asignar un Camion a dos Chacras el mismo dia y a la misma hora. @Aldo
-        ☐ 6.2 En una Reserva en estado Pendiente, si se rechaza no pide motivo de rechazo. @Aldo
-        ✔ 6.3 Dejar Rechazar una Reserva con motivo No. @Aldo @done(20-06-02 20:56)
+        ✔ 6.2 En una Reserva en estado Pendiente, si se rechaza no pide motivo de rechazo. @Aldo @done(20-06-02 23:52)
+        ✔ 6.3 Dejar Rechazar una Reserva con motivo No. @Aldo @done(20-06-02 23:52)
 
         Pagina Principal
         ☐ 7.1 Pagina Principal, Achicar iconos de arriba y logo.
@@ -28,11 +28,11 @@ Ticket 1:
         ☐ 9.1 Ajustarlo para que se vea bien en el celular
 
         Estados para Reservas
-        ☐ 8.1 En el panel de Operadores, en las Reservas Pendientes habria que ver que Estados dejar. Estado Pendiente es el actual
-        ☐ 8.2 Asignado se hace al ingresar la matricula y no se deberia usar 
-        ☐ 8.3 De Pendiente a Entregado no se deberia pasar, y dejar solo Rechazado puedo dejar lugar a confusion
-        ☐ 8.4 Sacaria el motivo de rechazo de todas las Reservas en estado Asignado (en discusion)
-        ☐ 9.2 corregir que al elegir una reserva pendiente el formulario no permite rechazarla
+        ✔ 8.1 En el panel de Operadores, en las Reservas Pendientes habria que ver que Estados dejar. Estado Pendiente es el actual @done(20-06-03 15:19)
+        ✔ 8.2 Asignado se hace al ingresar la matricula y no se deberia usar @done(20-06-03 15:19)
+        ✔ 8.3 De Pendiente a Entregado no se deberia pasar, y dejar solo Rechazado puedo dejar lugar a confusion @done(20-06-03 15:19)
+
+        ✔ 9.2 corregir que al elegir una reserva pendiente el formulario no permite rechazarla @done(20-06-03 00:00)
 
         NUEVOS Bugs : 
         - Alta Transportista no chequea nombre repetido, ni mayusculas

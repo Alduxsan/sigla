@@ -7,77 +7,91 @@
 
 <div class='main'>
  
-  <div class="dropdown">
-    <button class="dropbtn">RESERVAS</button>
-    <div class="dropdown-content">
-        <a href="{% url 'reserva_op' %}">NUEVA RESERVA</a>
-        <a href="{% url 'reserva_op_pendientes' %}">PENDIENTES</a>
-        <a href="{% url 'reserva_op_asignadas' %}">ASIGNADAS</a>
-        <a href="{% url 'reserva_op_finalizadas' %}">ENTREGADAS</a>
-        <a href="{% url 'reserva_op_rechazadas' %}">RECHAZADAS</a>
-    </div>
-  </div> 
   
-  <div class="dropdown">
-    <button class="dropbtn">PRODUCTORES</button>
-    <div class="dropdown-content">
-        <a href="{% url 'productor_crear' %}">ALTA PRODUCTOR</a>
-        <a href="{% url 'productor_listar' %}">LISTADO PRODUCTORES</a>
-    </div>
-  </div> 
-
-  <div class="dropdown">
-    <button class="dropbtn">CHACRAS</button>
-    <div class="dropdown-content">
-        <a href="{% url 'chacra_crear' %}">ALTA CHACRA</a>
-        <a href="{% url 'chacra_listar' %}">LISTADO CHACRAS</a>
+  <div class="btn-group">
+    <button id='boton_panel_op' type="button" class="btn btn-primary dropdown-toggle btn-block" data-toggle="dropdown" 
+    aria-haspopup="true" aria-expanded="false">
+      RESERVAS
+    </button>
+    <div class="dropdown-menu">
+      <a id='opciones' class="dropdown-item" href="{% url 'reserva_op' %}">NUEVA RESERVA</a>
+      <a id='opciones'  class="dropdown-item" href="{% url 'reserva_op_pendientes' %}">PENDIENTES</a>
+      <a id='opciones'  class="dropdown-item" href="{% url 'reserva_op_asignadas' %}">ASIGNADAS</a>
+      <a id='opciones'  class="dropdown-item" href="{% url 'reserva_op_finalizadas' %}">ENTREGADAS</a>
+      <a id='opciones' class="dropdown-item" href="{% url 'reserva_op_rechazadas' %}">RECHAZADAS</a>
     </div>
   </div>
 
-
-  <div class="dropdown">
-    <button class="dropbtn">TRANSPORTISTAS</button>
-    <div class="dropdown-content">
-        <a href="{% url 'transportista_crear' %}">ALTA TRANSPORTISTA</a>
-        <a href="{% url 'transportista_listar' %}">LISTADO TRANSPORTISTAS</a>
+  <div class="btn-group">
+    <button id='boton_panel_op' type="button" class="btn btn-primary dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      PRODUCTORES
+    </button>
+    <div class="dropdown-menu">      
+      <a id='opciones' class="dropdown-item" href="{% url 'productor_crear' %}">ALTA PRODUCTOR</a>
+      <a id='opciones' class="dropdown-item" href="{% url 'productor_listar' %}">LISTADO PRODUCTORES</a>
     </div>
   </div>
 
-  <div class="dropdown">
-    <button class="dropbtn">CAMIONES</button>
-    <div class="dropdown-content">
-        <a href="{% url 'camion_crear' %}">ALTA CAMION</a>
-        <a href="{% url 'camion_listar' %}">LISTADO CAMIONES</a>
+  <div class="btn-group">
+    <button id='boton_panel_op' type="button" class="btn btn-primary dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      CHACRAS
+    </button>
+    <div class="dropdown-menu">      
+      <a id='opciones' class="dropdown-item" href="{% url 'chacra_crear' %}">ALTA CHACRA</a>
+      <a id='opciones' class="dropdown-item" href="{% url 'chacra_listar' %}">LISTADO CHACRAS</a>
     </div>
   </div>
 
-
-  <div class="dropdown">
-    <button class="dropbtn">PRODUCTOS</button>
-    <div class="dropdown-content">
-        <a href="{% url 'producto_crear' %}">ALTA PRODUCTO</a>
-        <a href="{% url 'producto_listar' %}">LISTADO PRODUCTOS</a>
+  <div class="btn-group">
+    <button id='boton_panel_op' type="button" class="btn btn-primary dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      TRANSPORTISTAS
+    </button>
+    <div class="dropdown-menu">      
+      <a id='opciones' class="dropdown-item"href="{% url 'transportista_crear' %}">ALTA TRANSPORTISTA</a>
+      <a id='opciones' class="dropdown-item" href="{% url 'transportista_listar' %}">LISTADO TRANSPORTISTAS</a>
     </div>
   </div>
 
+  <div class="btn-group">
+    <button id='boton_panel_op' type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      CAMIONES
+    </button>
+    <div class="dropdown-menu">      
+      <a id='opciones' class="dropdown-item" href="{% url 'camion_crear' %}">ALTA CAMION</a>
+      <a id='opciones' class="dropdown-item" href="{% url 'camion_listar' %}">LISTADO CAMIONES</a>
+    </div>
+  </div>
 
-  <div class="dropdown">
-    <button class="dropbtn">PLANTAS</button>
-    <div class="dropdown-content">
-        <a href="{% url 'planta_crear' %}">ALTA PLANTA</a>
-        <a href="{% url 'planta_listar' %}">LISTADO PLANTAS</a>
+  <div class="btn-group">
+    <button id='boton_panel_op' type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      PRODUCTOS
+    </button>
+    <div class="dropdown-menu">      
+        <a id='opciones' class="dropdown-item" href="{% url 'producto_crear' %}">ALTA PRODUCTO</a>
+        <a id='opciones' class="dropdown-item"href="{% url 'producto_listar' %}">LISTADO PRODUCTOS</a>
     </div>
   </div>
   
-
-  <div class="dropdown">
-    <button class="dropbtn">USUARIOS</button>
-    <div class="dropdown-content">
-        <a href="{% url 'usuario_crear' %}">ALTA USUARIO</a>
-        <a href="{% url 'usuario_listar' %}">LISTADO USUARIO</a>
+  <div class="btn-group">
+    <button id='boton_panel_op' type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      PLANTAS
+    </button>
+    <div class="dropdown-menu">      
+      <a id='opciones' class="dropdown-item" href="{% url 'planta_crear' %}">ALTA PLANTA</a>
+      <a id='opciones' class="dropdown-item" href="{% url 'planta_listar' %}">LISTADO PLANTAS</a>
     </div>
   </div>
-
+ 
+  <div class="btn-group">
+    <button id='boton_panel_op' type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      USUARIOS
+    </button>
+    <div class="dropdown-menu">      
+      <a id='opciones' class="dropdown-item" href="{% url 'usuario_crear' %}">ALTA USUARIO</a>
+      <a id='opciones' class="dropdown-item" href="{% url 'usuario_listar' %}">LISTADO USUARIO</a>
+    </div>
+  </div>
+  
 </div>
 
 {% endblock %}

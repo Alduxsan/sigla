@@ -11,24 +11,34 @@
 #container-fluid{
     display: block;
     text-align: center;
-    position: relative;         
+    position: relative;
+            
 }
 
-#container-fluid .bg{
+/* #container-fluid .bg{
 
+    height: 100vh;
+    width: 100vw;
+    background: url('https://mocah.org/uploads/posts/533818-wheat-field.jpg') no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+   -moz-background-size: cover;
+   background-size: cover;
+   -o-background-size: cover;
     position: absolute;
     z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
-    opacity: .4;
-    width: auto;
-    height: auto;
-}
+    opacity: .5;
+} */
 
+body { 
+    background: url('static/images/fondotrigo.png') no-repeat center center fixed ; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
+  
 .icon-bar {
 	width: auto;
 	

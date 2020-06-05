@@ -29,10 +29,10 @@
   
 <div id ="container-fluid">
       {% block sidebar %}
-      <div class="bg">
-        <img src='https://mocah.org/uploads/posts/533818-wheat-field.jpg'>
-      </div>
+
+
       <div id=menu>
+
       <div class="icon-bar">
         {% if request.user.groups.all.0.name == 'Productores' %}
         <a class="active" href="{% url 'inicio' %}"><i class="fas fa-home"></i></a>

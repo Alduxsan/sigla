@@ -15,21 +15,6 @@
             
 }
 
-/* #container-fluid .bg{
-
-    height: 100vh;
-    width: 100vw;
-    background: url('https://mocah.org/uploads/posts/533818-wheat-field.jpg') no-repeat center center fixed;
-    background-size: cover;
-    -webkit-background-size: cover;
-   -moz-background-size: cover;
-   background-size: cover;
-   -o-background-size: cover;
-    position: absolute;
-    z-index: -1;
-    opacity: .5;
-} */
-
 body { 
     background: url('static/images/fondotrigo.png') no-repeat center center fixed ; 
     -webkit-background-size: cover;
@@ -40,8 +25,8 @@ body {
 
   
 .icon-bar {
+
 	width: auto;
-	
     overflow: auto;
     margin: auto;
     text-align: center;
@@ -52,27 +37,20 @@ body {
   
   .icon-bar a {
 	float: center;
-	width: 20%;
     text-align: center;
     margin: 1%;
 	margin-top: 20px;
 	transition: all 0.8s ease;
 	color: #323653;
-    font-size: 90px;
+    font-size: 7vw;
   }
 
   
   .icon-bar a:hover {
-
-    margin: 3%;
     text-decoration: none;
     color: #d1ad1b;
     }
     
-
-
-  
-
 
 #login_imagenlogo{
     text-align: center;}
@@ -129,7 +107,7 @@ body {
     text-decoration: none;
     color: white;
     display: block;
-    width: 200;
+    
     margin-bottom: 3px;
     font-weight: bold;
     
@@ -152,7 +130,6 @@ body {
 /* panel operador */
 #inicio_imagenlogo{
 
-  
     text-align: center;
     margin-bottom: 10px;
 }
@@ -160,8 +137,11 @@ body {
 #inicio_imagenlogo div{
     margin: 2px;
     display: inline-block;
-    background: white;
+}
+
+#inicio_imagenlogo img{
     border-radius: 4px;
+    width: 9vw;
 }
 
 #nombre{
@@ -169,10 +149,6 @@ body {
     height: 110px;
 }
 
-.logo{
-    padding: 5px;
-    
-}
 
 
 
@@ -244,7 +220,7 @@ h4{
     border-radius: 10px;
 }
 #form{
-
+    
     text-align: center;
     max-width: 500px;
     margin: 0 auto;

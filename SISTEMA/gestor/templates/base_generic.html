@@ -7,8 +7,7 @@
   {% block title %}<title>Sigla</title>{% endblock %}
 
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -35,28 +34,28 @@
 
       <div class="icon-bar">
         {% if request.user.groups.all.0.name == 'Productores' %}
-        <a class="active" href="{% url 'inicio' %}"><i class="fas fa-home"></i></a>
-        <a href='https://drive.google.com/drive/folders/1EdPf4HU5MXEoTsTF5mOo_5kxyelTbPvv?usp=sharing'><i class="far fa-question-circle"></i></a>
+        <a class="active" href="{% url 'inicio' %}" title='INICIO'><i class="fas fa-home"></i></a>
+        <a href='https://drive.google.com/drive/folders/1EdPf4HU5MXEoTsTF5mOo_5kxyelTbPvv?usp=sharing'title='AYUDA'><i class="far fa-question-circle"></i></a>
         
         <a href="{% url 'datos_usuario'%}"title= "Usuario: {{ user.get_username }}">
           <i class="fas fa-envelope"></i></a>
          
-        <a href="{% url 'logout'%}"><i class="fas fa-sign-out-alt"></i></a>
+        <a href="{% url 'logout'%}" title='SALIR'><i class="fas fa-sign-out-alt"></i></a>
         
       </div>
    
   
           {%else%} 
           <div class="icon-bar">
-            <a class="active" href="{% url 'inicio' %}" ><i id=home_icon class="fas fa-home"></i></a>
+            <a class="active" href="{% url 'inicio' %}"  title='INICIO'><i id=home_icon class="fas fa-home" ></i></a>
             
-            <a href='https://drive.google.com/drive/folders/1EdPf4HU5MXEoTsTF5mOo_5kxyelTbPvv?usp=sharing'>
+            <a href='https://drive.google.com/drive/folders/1EdPf4HU5MXEoTsTF5mOo_5kxyelTbPvv?usp=sharing' title='AYUDA'>
               <i id=ayuda_icon class="fas fa-question-circle"></i></a>
             
             <a href="{% url 'datos_usuario_operador'%}" title="Operador: {{ user.get_username }}">
               <i id=usuario_icon class="far fa-address-card" ></i></a>
             
-            <a href="{% url 'logout'%}">
+            <a href="{% url 'logout'%}"title='SALIR'>
               <i id=salir_icon class="fas fa-sign-out-alt"></i></a>
               
           </div> 

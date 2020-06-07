@@ -125,8 +125,6 @@ body {
 }
 
 
-
- 
 /* panel operador */
 #inicio_imagenlogo{
 
@@ -193,7 +191,7 @@ h4{
 }
 
 #boton_panel_op{
-    width: 180px;
+    width: 190px;
     margin-top: 5px;
 }
 
@@ -237,39 +235,48 @@ h4{
 
 /* LISTADOS */
 #titulo{
-
+    font-weight: bold;
     text-align: center;
 }
 #nueva{
     text-align: right;
 }
 
-h2{
 
-    text-align: center;
-    
-}
 
 
 /*TABLAS*/
 
-#tablas{
+#tabla{
 
     margin: auto;
     width: auto;
+    background-color: #d4d4d4;
+    
+    
 }
 
 
-thead th{
+#tabla thead tr,th{
     font-weight: bolder;
-    font-size: 1.2em;
-    background-color: #f0f0f0;
+    font-size: 1em;
+    background-color: #d6d6d6;
+    padding: 8px;
 
 }
-tbody tr{
+#tabla tbody tr{
     background-color: white;
-}
+    
+} 
+#tabla tbody tr:hover{
 
+    background-color: #e6cd6d ;
+
+}
+#tabla tbody td:hover{
+    background-color: #e7cb5a ;
+    font-weight: bolder;
+}
 
 
  

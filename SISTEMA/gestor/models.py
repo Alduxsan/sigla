@@ -3,7 +3,7 @@ from django.db.models import Model
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
 from django.core.validators import RegexValidator
-from datetime import date, datetime, time
+from datetime import date, datetime, time, timedelta,timezone
 from django.utils import timezone
 from django.core.validators import MaxValueValidator, MinValueValidator
 
@@ -189,7 +189,7 @@ class Reserva(models.Model):
     chacra = models.ForeignKey(Chacra, on_delete=models.CASCADE)
     producto = models.ForeignKey(Producto, blank=False, null=False, on_delete=models.PROTECT, default=None)
     fecha = models.DateField(default=date.today, blank=False, null=False)
-    hora = models.TimeField(default=datetime.now,blank=False, null=False)
+    hora = models.TimeField(default=datetime.now(),blank=False, null=False)
     observaciones = models.TextField(db_column='observaciones', max_length=80, blank=True)
     motivo_rechazo = models.CharField(db_column='observacion por rechazo', choices= MOTIVO_RECHAZO, default = 'NO', max_length = 30)
     idcamion = models.ForeignKey(Camion, blank=True, null=True, on_delete=models.PROTECT)
@@ -213,7 +213,11 @@ class Reserva(models.Model):
        #corre validacion base
         super(Reserva, self).clean(*args, **kwargs)
 
-        
+        time = (datetime.now() + timedelta(hours=1))
+
+        if self.hora < time.time() :
+            raise ValidationError('Se requiere al menos 1 hora de diferencia de la actual para la reserva')
+
        #no permite fechas anteriores a la actual#
         if self.fecha < date.today():
             if self.estado == 'Rechazado' or self.estado == 'Entregado':

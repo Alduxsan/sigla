@@ -5,14 +5,14 @@
 {% block content %}
 
 
-  <div id=titulo>
+  <div>
 
-  <h2>LISTADO DE VIAJES ASIGNADOS <a class="btn btn-primary" href="{% url 'reserva_op' %}">Nueva Reserva</a></h2>
+  <h2 id=titulo>LISTADO DE VIAJES ASIGNADOS <a class="btn btn-primary" href="{% url 'reserva_op' %}">Nueva Reserva</a></h2>
   
   </div>
 
-  <div id=tablas>
-<table class="table table-striped" id=tablas>
+  <div >
+	<table id='tabla' class="table-responsive">
 	<thead>
 		<tr>
 			<th>Nro</th>
@@ -50,7 +50,7 @@
 		{% endfor %}
 		
 		{% else %}
-		<h1>No hay registros de solicitudes</h1>
+		<h3 id="titulo">No hay registros de solicitudes</h3>
 		{% endif %}
 	</tbody>
 </table> 

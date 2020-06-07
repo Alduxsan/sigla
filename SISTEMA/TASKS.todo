@@ -23,9 +23,9 @@ Ticket 1:
         ✔ 6.3 Dejar Rechazar una Reserva con motivo No. @Aldo @done(20-06-02 23:52)
 
         Pagina Principal
-        ☐ 7.1 Pagina Principal, Achicar iconos de arriba y logo.
+        ✔ 7.1 Pagina Principal, Achicar iconos de arriba y logo. @done(20-06-05 23:09)
         Modal de confirmacion
-        ☐ 9.1 Ajustarlo para que se vea bien en el celular
+        ✔ 9.1 Ajustarlo para que se vea bien en el celular @done(20-06-05 23:09)
 
         Estados para Reservas
         ✔ 8.1 En el panel de Operadores, en las Reservas Pendientes habria que ver que Estados dejar. Estado Pendiente es el actual @done(20-06-03 15:19)

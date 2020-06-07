@@ -4,13 +4,14 @@
 
 {% block content %}
 
-</div>
-<div id=titulo>
-<h2>LISTADO DE VIAJES ENTREGADOS</h2>
-</div>
-<div id=tablas>
 
-	<table class="table table-striped" id=tablas>
+<div>
+	<h2 id=titulo>LISTADO DE RESERVAS ENTREGADAS <a class="btn btn-primary" href="{% url 'reserva_op' %}">Nueva Reserva</a></h2>
+  </div>
+
+
+
+	<table id='tabla' class="table-responsive">
 	
 	<thead>
 		<tr>

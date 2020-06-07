@@ -4,8 +4,8 @@
 {% block content %}
 
 
-
-<table class="table table-striped" id=tablas>
+<h2 id=titulo>LISTADO DE RESERVAS</h2>
+<table id='tabla' class="table-responsive">
 	<thead>
 		<tr>
 			<th>Nro</th>
@@ -34,7 +34,7 @@
 		{% endfor %}
 		
 		{% else %}
-		<h2>No hay registros de solicitudes</h2>
+		<h2 id=titulo>No hay registros de solicitudes</h2>
 		{% endif %}
 	</tbody>
 </table> 
